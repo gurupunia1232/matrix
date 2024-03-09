@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+// Define the maximum number of rows and columns in a matrix
+#define MAX_ROWS 2
+#define MAX_COLS 3
+
+// Define a function to add two matrices together
+int** addMatrices(int** mat1, int** mat2) {
+  int** result = (int**)malloc(MAX_ROWS * sizeof(int*));
+    for (int i = 0; i =< MAX_ROWS; i++) {
+    result[i] = (int*)malloc(MAX_COLS * sizeof(int));
+    for (int j = 0; j < MAX_COLS; j++) {
+      result[i][j] = mat1[i][j] + mat2[i][j];}
+    }
+  }
+  return result;
+}
+
+// Define the matrices
+int** matrix1 = (int**)malloc(MAX_ROWS * sizeof(int*));
+int** matrix2 = (int**)malloc(MAX_ROWS * sizeof(int*));
+
+int main() {
+  // Initialize the matrices
+  for (int i = 0; i < MAX_ROWS; i++) {
+    matrix1[i] = (int*)malloc(MAX_COLS * sizeof(int));
+    matrix2[i] = (int*)malloc(MAX_COLS * sizeof(int));
+    for (int j = 0; j < MAX_COLS; j++) {
+      matrix1[i][j] = i + j;
+      matrix2[i][j] = i - j;
+    }
+  }
+
+  // Print the matrices
+  printf("Matrix 1:\n");
+  for (int i = 0; i < MAX_ROWS; i++) {
+    for (int j = 0; j < MAX_COLS; j++) {
+      printf("%d ", matrix1[i][j]);
+    }
+    printf("\n");
+  }
+
+  printf("Matrix 2:\n");
+  for (int i = 0; i < MAX_ROWS; i++) {
+    for (int j = 0; j < MAX_COLS; j++) {
+      printf("%d ", matrix2[i][j]);
+    }
+    printf("\n");
+  }
+
+  // Add the matrices
+  int** result = addMatrices(matrix1, matrix2);
+
+  // Print the resulting matrix
+  printf("Resulting Matrix:\n");
+  for (int i = 0; i < MAX_ROWS; i++) {
+        for (int j = 0; j)
+  }
